@@ -24,3 +24,5 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem "money", "~> 6.7", ">= 6.7.1"
