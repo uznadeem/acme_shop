@@ -33,3 +33,38 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# Node / Yarn
+node_modules/
+yarn.lock
+package-lock.json
+
+# Rails standard
+/log/*
+/tmp/*
+/storage/*
+/public/assets/*
+/public/packs/*
+/public/packs-test/*
+/public/uploads/*
+/coverage/
+*.pid
+*.pid.lock
+
+# Environment & credentials
+.env
+.env.*
+config/master.key
+config/credentials.yml.enc
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Byebug / Pry / IRB history
+.byebug_history
+.irb_history
+
+# SQLite (if ever used)
+*.sqlite3
+*.sqlite3-journal
