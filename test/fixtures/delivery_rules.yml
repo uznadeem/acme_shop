@@ -1,0 +1,11 @@
+tier_0:
+  threshold_cents: 0
+  fee_cents: 495
+
+tier_50:
+  threshold_cents: 5000
+  fee_cents: 295
+
+tier_90:
+  threshold_cents: 9000
+  fee_cents: 0

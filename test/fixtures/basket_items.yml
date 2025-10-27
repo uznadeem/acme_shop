@@ -1,0 +1,38 @@
+# B01, G01
+bg_b01:
+  basket: bg
+  product: b01
+  quantity: 1
+
+bg_g01:
+  basket: bg
+  product: g01
+  quantity: 1
+
+# R01 x 2
+rr_r01:
+  basket: rr
+  product: r01
+  quantity: 2
+
+# R01, G01
+rg_r01:
+  basket: rg
+  product: r01
+  quantity: 1
+
+rg_g01:
+  basket: rg
+  product: g01
+  quantity: 1
+
+# B01 x 2, R01 x 3
+combo_b01:
+  basket: combo
+  product: b01
+  quantity: 2
+
+combo_r01:
+  basket: combo
+  product: r01
+  quantity: 3

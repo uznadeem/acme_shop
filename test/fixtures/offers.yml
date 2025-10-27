@@ -1,0 +1,6 @@
+bogo_half_r01:
+  kind: "bogo_half"
+  product: r01
+  active: true
+  meta:
+    pair_discount: 0.5

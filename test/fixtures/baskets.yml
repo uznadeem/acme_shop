@@ -1,0 +1,7 @@
+empty: {}
+
+bg: {}      # B01, G01
+rr: {}      # R01 x 2
+rg: {}      # R01, G01
+
+combo: {}   # B01 x 2, R01 x 3

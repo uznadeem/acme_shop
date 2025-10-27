@@ -1,0 +1,14 @@
+r01:
+  code: "R01"
+  name: "Red Widget"
+  price_cents: 3295
+
+g01:
+  code: "G01"
+  name: "Green Widget"
+  price_cents: 2495
+
+b01:
+  code: "B01"
+  name: "Blue Widget"
+  price_cents: 795

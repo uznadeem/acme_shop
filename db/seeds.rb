@@ -1,9 +1,13 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
+Product.upsert_all([
+  { code: "R01", name: "Red Widget",   price_cents: (32.95 * 100).round, updated_at: Time.current, created_at: Time.current },
+  { code: "G01", name: "Green Widget", price_cents: (24.95 * 100).round, updated_at: Time.current, created_at: Time.current },
+  { code: "B01", name: "Blue Widget",  price_cents: (7.95  * 100).round, updated_at: Time.current, created_at: Time.current }
+], unique_by: :index_products_on_code)
+
+DeliveryRule.delete_all
+DeliveryRule.create!(threshold_cents:    0, fee_cents: (4.95 * 100).round)
+DeliveryRule.create!(threshold_cents: 5000, fee_cents: (2.95 * 100).round)
+DeliveryRule.create!(threshold_cents: 9000, fee_cents: 0)
+
+Offer.where(kind: "bogo_half").delete_all
+Offer.create!(kind: "bogo_half", product: Product.find_by!(code: "R01"), meta: { "pair_discount" => 0.5 }, active: true)
