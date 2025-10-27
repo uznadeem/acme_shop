@@ -1,4 +1,12 @@
 class ApplicationController < ActionController::Base
-  # Only allow modern browsers supporting webp images, web push, badges, import maps, CSS nesting, and CSS :has.
-  allow_browser versions: :modern
+  helper_method :current_basket
+
+  private
+
+  def current_basket
+    @current_basket ||= begin
+      session[:basket_id] ||= Basket.create!.id
+      Basket.find(session[:basket_id])
+    end
+  end
 end

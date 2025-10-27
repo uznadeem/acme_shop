@@ -1,0 +1,85 @@
+<!-- app/views/products/index.html.erb -->
+<div class="py-5 bg-light">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-10">
+
+        <div class="text-center mb-4">
+          <h1 class="fw-bold text-primary mb-0">Acme Widget Co</h1>
+        </div>
+
+        <%= form_with url: "#", method: :post, local: true, id: "basket-form", data: { controller: "basket" } do %>
+
+          <div class="card shadow-sm mb-4">
+            <div class="card-body p-0">
+              <div class="table-responsive">
+                <table class="table table-hover table-sm align-middle mb-0" id="products-table">
+                  <thead class="table-primary">
+                    <tr>
+                      <th scope="col" class="ps-4">Code</th>
+                      <th scope="col">Name</th>
+                      <th scope="col" class="text-end">Price</th>
+                      <th scope="col" class="text-center">Quantity</th>
+                      <th scope="col" class="text-end pe-4">Line Total</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% @products.each do |p| %>
+                      <% existing = @basket.basket_items.find { |bi| bi.product_id == p.id } %>
+                      <tr
+                        data-basket-target="row"
+                        data-product-id="<%= p.id %>"
+                        data-code="<%= p.code %>"
+                        data-price-cents="<%= p.price.cents %>">
+                        <td class="ps-4 fw-semibold"><%= p.code %></td>
+                        <td><%= p.name %></td>
+                        <td class="text-end text-nowrap"><%= p.price.format %></td>
+                        <td class="text-center">
+                          <%= number_field_tag "quantities[#{p.id}]",
+                                               existing&.quantity || 0,
+                                               min: 0, max: 500, step: 1,
+                                               class: "form-control form-control-sm text-center mx-auto qty-input",
+                                               style: "max-width: 120px;",
+                                               data: { basket_target: "qty", action: "input->basket#debouncedRecalc" } %>
+                        </td>
+                        <td class="line-total text-end pe-4 fw-semibold" data-basket-target="lineTotal">$0.00</td>
+                      </tr>
+                    <% end %>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="card shadow-sm p-4 mx-auto" style="max-width: 520px;">
+            <h5 class="card-title mb-3 text-center text-secondary">Order Summary</h5>
+
+            <div class="d-flex justify-content-between mb-2">
+              <span>Subtotal</span>
+              <strong id="subtotal" data-basket-target="subtotal">$0.00</strong>
+            </div>
+
+            <div class="d-flex justify-content-between mb-2">
+              <span>Discount</span>
+              <strong id="discount" data-basket-target="discount" class="text-success">-$0.00</strong>
+            </div>
+
+            <div class="d-flex justify-content-between mb-2">
+              <span>Delivery Fee</span>
+              <strong id="delivery" data-basket-target="delivery">$0.00</strong>
+            </div>
+
+            <hr class="my-3">
+
+            <div class="d-flex justify-content-between fs-5 fw-bold text-primary">
+              <span>Total</span>
+              <strong id="grand-total" data-basket-target="total">$0.00</strong>
+            </div>
+          </div>
+
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>

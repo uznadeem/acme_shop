@@ -54,9 +54,11 @@ class BasketTest < ActiveSupport::TestCase
   test "empty basket has zero subtotal and base delivery fee" do
     b = Basket.create!
     payload = b.pricing_payload
-    assert_equal 0,    cents(payload[:subtotal])
-    assert_equal 495,  cents(payload[:delivery])
-    assert_equal 495,  cents(payload[:total])
+    to_cents = ->(d) { (d.to_f * 100).round }
+    assert_equal 0, to_cents.call(payload[:subtotal])
+    assert_equal 0, to_cents.call(payload[:discount])
+    assert_equal 0, to_cents.call(payload[:delivery])
+    assert_equal 0, to_cents.call(payload[:total])
   end
 
   test "bogo_half discount only applies per pair (odd quantity)" do

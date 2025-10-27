@@ -52,6 +52,8 @@ module Pricing
     end
 
     def delivery_cents
+      return 0 unless basket.basket_items.exists?
+
       after_discount = subtotal_cents - discount_cents
       DeliveryRule.fee_for(after_discount)
     end
