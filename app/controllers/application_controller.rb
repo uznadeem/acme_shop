@@ -5,8 +5,15 @@ class ApplicationController < ActionController::Base
 
   def current_basket
     @current_basket ||= begin
-      session[:basket_id] ||= Basket.create!.id
-      Basket.find(session[:basket_id])
+      id      = session[:basket_id]
+      basket  = id && Basket.find_by(id: id)
+
+      unless basket
+        basket = Basket.create!
+        session[:basket_id] = basket.id
+      end
+
+      basket
     end
   end
 end
