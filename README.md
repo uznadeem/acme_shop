@@ -228,17 +228,16 @@ The **Acme Shop** project demonstrates:
 
 It’s not just a challenge solution — it’s a production-ready example of well-structured full-stack engineering.
 
----
 
 ## 👨‍💻 Author
 
 **Uzair Nadeem**
 Full-Stack Ruby on Rails Developer
 
-🌐 [LinkedIn](https://www.linkedin.com/in/uznadeem/)
+🌐 [Uzair Nadeem](https://www.linkedin.com/in/uznadeem/)
+
 📧 uzairnadeem.se@gmail.com
 
----
 
 ## 📜 License
 
