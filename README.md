@@ -1,19 +1,13 @@
-# 🛒 Acme Shop – Piktochart Fullstack Developer Coding Test
+# Acme Shop – Piktochart Fullstack Developer Coding Test
 
-![Acme Shop UI](https://github.com/user-attachments/assets/91bb4e49-f9ac-403b-93c5-46e5ff49c202)
-
----
-
-## 📘 Project Overview
-
-This repository contains the **Acme Shop** solution — a Ruby on Rails implementation of the **Piktochart Fullstack Developer Coding Challenge**.
+This repository contains the **Acme Shop** solution — a Ruby on Rails implementation of the [Piktochart Fullstack Developer Coding Challenge](https://docs.google.com/document/d/15lqdsAkygksBc-cDefDzLnCEXzi8kPseIW6cXO75bw4/edit?tab=t.0).
 The task was to develop a **shopping basket system** for **Acme Widget Co**, a fictional company that sells widgets with **tiered delivery rules** and **dynamic promotional offers**.
 
 The project goes beyond a console solution — it’s a fully functional web application with a live UI, instant recalculations, and complete test coverage.
 
----
+<img width="605" height="383" alt="image" src="https://github.com/user-attachments/assets/e76d3d50-cdb7-44e6-9075-39da677518a2" />
 
-## 🧩 Challenge Summary
+## Challenge Summary
 
 ### Products
 
@@ -42,17 +36,6 @@ The project goes beyond a console solution — it’s a fully functional web app
 | R01, G01 | $60.85 |
 | B01, B01, R01, R01, R01 | $98.27 |
 
----
-
-## 🧠 Core Concepts
-
-- **Basket Interface** – Allows adding products by code and computing totals dynamically.
-- **Pricing Engine** – Centralized business logic for calculating subtotal, discounts, and delivery.
-- **Offer Engine** – Abstracted design for applying current and future promotions flexibly.
-- **AJAX Recalculation** – Real-time updates through Stimulus.js without reloading the page.
-- **Bootstrap Layout** – Responsive and polished front-end for professional presentation.
-
----
 
 ## 🗄️ Database Schema
 
@@ -80,7 +63,16 @@ The project goes beyond a console solution — it’s a fully functional web app
 - product_id (integer, FK)
 - quantity (integer, default: 1)
 
----
+
+## 🧠 Core Concepts
+
+- **Basket Interface** – Allows adding products by code and computing totals dynamically.
+- **Pricing Engine** – Centralized business logic for calculating subtotal, discounts, and delivery.
+- **Offer Engine** – Abstracted design for applying current and future promotions flexibly.
+- **AJAX Recalculation** – Real-time updates through Stimulus.js without reloading the page.
+- **Bootstrap Layout** – Responsive and polished front-end for professional presentation.
+
+
 
 ## ⚙️ Tech Stack
 
@@ -94,7 +86,7 @@ The project goes beyond a console solution — it’s a fully functional web app
 | Testing | Minitest |
 | Background Processing | Built-in Rails Jobs |
 
----
+
 
 ## 🌱 Seed Data
 
@@ -108,7 +100,7 @@ Command:
 
 `rails db:setup`
 
----
+
 
 ## 🚀 Setup Guide
 
@@ -127,7 +119,6 @@ Command:
 **5. Access Application**
 Visit: [http://localhost:3000](http://localhost:3000)
 
----
 
 ## 🎨 Frontend Overview
 
@@ -158,7 +149,6 @@ Determined based on the **post-discount subtotal**:
 ### Total
 Total = Subtotal − Discount + Delivery Fee
 
----
 
 ## 💡 Key Assumptions
 
@@ -174,7 +164,6 @@ Total = Subtotal − Discount + Delivery Fee
 10. **Performance** – All associations preloaded to avoid N+1 queries.
 11. **Frontend Interaction** – Stimulus.js updates totals live; no full page reload.
 
----
 
 ## 🧪 Test Coverage
 
@@ -208,7 +197,6 @@ Run tests with:
 - Quantity = 0
 - Full discount with base delivery
 
----
 
 ## 🧰 Design Choices
 
@@ -218,7 +206,6 @@ Run tests with:
 - **Real-Time UI** – Stimulus controllers keep the experience seamless.
 - **Performance Optimized** – Uses includes and caching for faster basket recalculation.
 
----
 
 ## 🔮 Future Enhancements
 
@@ -229,7 +216,6 @@ Run tests with:
 - Turbo Streams for real-time checkout experience
 - Persistent baskets via cookies or user accounts
 
----
 
 ## 🏁 Conclusion
 
@@ -249,8 +235,8 @@ It’s not just a challenge solution — it’s a production-ready example of we
 **Uzair Nadeem**
 Full-Stack Ruby on Rails Developer
 
-🌐 [LinkedIn](#)
-📧 uzair@example.com
+🌐 [LinkedIn](https://www.linkedin.com/in/uznadeem/)
+📧 uzairnadeem.se@gmail.com
 
 ---
 
